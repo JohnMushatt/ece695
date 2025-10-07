@@ -1,0 +1,24 @@
+1. How many semaphores and locks are available in DLXOS, respectively?
+    A: 32 semaphores and 64 locks, 32 of which are used for condidition variables
+2. What are the system calls to create, acquire and release a lock?
+    A: lock_create,lock_acquire, and lock_release
+3. How is a semaphore created in DLXOS?
+    A: Disable interrupts, grab first semaphore available in the global sems array
+       not in use to in use, then initialize the semaphore which involves creating 
+       a queue to tract processeses waiting on the semaphore. Then return the handle
+       to the acquired semaphore
+4. Explain how lock_acquire, lock_release, sem_signal and sem_wait work.
+    A:
+        lock_acquire: Disable interrupts, check if caller owns the lock, if lock is held by another process
+        then enques the caller onto the wait queue and sleeps. If not it sets ownership of lock to caller PID
+
+        lock_release: Disable interrupts, check if caller owns lock, if so remove ownership from lock. If there is 
+        non-empty wait queue, grab head of queue and give it to new process, wake it, then retore interrupts.
+
+        sem_signal: Disable interrupts, if sem count is <= 0, put waiter on sem wait queue then sleep, else decrement count.
+        Restore interrupts
+
+        sem_wait: Disable interrupts, increment count on sem, if count > 0 and wait queue is non-empty, dequeue next process
+        and wake it. Decrement the count for the new process on its behalf. Restore interrupts
+5. What is a handle and how is it used to access semaphores in DLXOS?
+    Integer index into the global sem array maintained by DLXOS. Used to index during semaphore API operations

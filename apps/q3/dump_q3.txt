@@ -1,0 +1,83 @@
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 3; ee469_fixterminal
+Stack=0x1fffc8, pc starting at 0x113bc
+Got 3 arguments.
+Available memory: 0x1c910 -> 0x200000.
+Argument count is 3.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 3.
+calling process_create with two parameters
+Creating 3 processes
+Shared memory page allocated @ 0x4
+Shared memory page mapped @ 0x10000
+Buffer using semaphores and locks for synchronization
+Buffer initialized successfully
+Main process will wait for 6 processes to complete
+Creating 3 producer/consumer pairs
+Producer 30 inserted: 0
+Producer 30 inserted: 1
+Consumer 29 removed: 0
+Producer 30 inserted: 2
+Consumer 29 removed: 1
+Producer 28 inserted: 0
+Producer 30 inserted: 3
+Consumer 29 removed: 2
+Producer 28 inserted: 1
+Consumer 27 removed: 0
+Producer 30 inserted: 4
+Consumer 29 removed: 3
+Producer 28 inserted: 2
+Consumer 27 removed: 1
+Producer 26 inserted: 0
+Producer 30 inserted: 5
+Consumer 29 removed: 4
+Producer 28 inserted: 3
+Consumer 27 removed: 2
+Producer 26 inserted: 1
+Consumer 25 removed: 0
+Producer 30 inserted: 6
+Consumer 29 removed: 5
+Producer 28 inserted: 4
+Consumer 27 removed: 3
+Producer 26 inserted: 2
+Consumer 25 removed: 1
+Producer 30 inserted: 7
+Consumer 29 removed: 6
+Producer 28 inserted: 5
+Consumer 27 removed: 4
+Producer 26 inserted: 3
+Consumer 25 removed: 2
+Producer 30 inserted: 8
+Consumer 29 removed: 7
+Producer 28 inserted: 6
+Consumer 27 removed: 5
+Producer 26 inserted: 4
+Consumer 25 removed: 3
+Producer 30 inserted: 9
+Consumer 29 removed: 8
+Producer 28 inserted: 7
+Consumer 27 removed: 6
+Producer 26 inserted: 5
+Consumer 25 removed: 4
+Producer 28 inserted: 8
+Producer 26 inserted: 6
+Consumer 29 removed: 9
+Producer 28 inserted: 9
+Consumer 27 removed: 7
+Consumer 25 removed: 5
+Producer 26 inserted: 7
+Consumer 27 removed: 8
+Consumer 25 removed: 6
+Producer 26 inserted: 8
+Consumer 27 removed: 9
+Consumer 25 removed: 7
+Producer 26 inserted: 9
+Consumer 25 removed: 8
+Consumer 25 removed: 9
+All other processes completed, exiting main process.
+No runnable processes - exiting!
+Exiting at program request.
+Instructions executed: 28560410
+Time simulated: 28.560 secs
+Real time elapsed: 0.673 secs
+Execution rate: 42.41M simulated instructions per real second.
